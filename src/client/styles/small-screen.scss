@@ -1,0 +1,26 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 1024px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .new-post-content {
+    order: 2;
+  }
+  .banner {
+    order: 1;
+  }
+  .main-content {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer {
+    order: 4;
+  }
+  .new-post-detail,
+  .social-sharing-detail {
+    text-align: center;
+    padding-right: 30px;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="header">
+        <div class="left-side">
+          <div class="home-page">Homepage</div>
+        </div>
+        <div class="right-side">
+          <input type="text" />
+          <button>Search</button>
+        </div>
+      </section>
+      <div class="content">
+        <div class="banner">Travel App</div>
+        <div class="main-content">
+          <div class="form-section">
+            <form
+              id="form-weather"
+              onsubmit="return Client.handleSubmit(event)"
+            >
+              <div class="input-field">
+                <label for="txtLocation">Location</label>
+                <input
+                  id="txtLocation"
+                  type="text"
+                  placeholder="Enter location ..."
+                />
+              </div>
+
+              <input
+                id="btn-check-weather"
+                type="submit"
+                value="Check Weather"
+                onclick="return Client.handleSubmit(event)"
+                onsubmit="return handleSubmit(event)"
+              />
+            </form>
+          </div>
+          <div class="card-section" id="card-section"></div>
+        </div>
+        <div class="new-post-content">
+          <h2 class="new-post-title">
+            New post
+          </h2>
+          <div class="new-post-detail">
+            <ul class="side-list-items">
+              <li>
+                <a href="#">New Post 1</a>
+              </li>
+              <li><a href="#">New Post 2</a></li>
+              <li><a href="#">New Post 3</a></li>
+              <li><a href="#">New Post 4</a></li>
+              <li><a href="#">New Post 5</a></li>
+              <li><a href="#">New Post 6</a></li>
+            </ul>
+          </div>
+          <h2 class="social-sharing-title">Else Where</h2>
+          <div class="social-sharing-detail">
+            <ul class="side-list-items">
+              <li>
+                <a href="pages/posts.html">Git hub</a>
+              </li>
+              <li><a href="pages/posts.html">Facebook</a></li>
+              <li><a href="pages/posts.html">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        Footer Section
+      </footer>
+
+      <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+          })
+        }
+      </script>
+    </div>
+  </body>
+</html>

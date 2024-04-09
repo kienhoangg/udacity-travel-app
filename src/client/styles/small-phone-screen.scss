@@ -1,0 +1,7 @@
+/* Small devices (portrait tablets and large phones, smaller than 600px) */
+@media only screen and (max-width: 600px) {
+  .card-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
