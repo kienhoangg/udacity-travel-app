@@ -6,8 +6,7 @@
     "test": "jest",
     "start": "node src/server/server.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server --config webpack.dev.js",
-    "build-test": "webpack --config webpack.test.js"
+    "build-dev": "webpack-dev-server --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",

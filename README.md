@@ -13,6 +13,10 @@ Remember that once you clone, you will still need to install everything:
 
 - `npm install --legacy-peer-deps`
 
+Run server express:
+
+- `npm start`
+
 For development environments:
 
 - `npm run build-dev`
@@ -20,10 +24,6 @@ For development environments:
 For Production environments:
 
 - `npm run build-prod`
-
-For Test environments:
-
-- `npm run build-test`
 
 ## Setting up the API
 

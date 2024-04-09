@@ -8,7 +8,6 @@ import {
 } from './js/api'
 import { handleSubmit } from './js/app.js'
 import { validateLocation } from './js/validate.js'
-import Image from './images/blog-ph.jpg'
 import dayjs from 'dayjs'
 export {
   apiGeonames,
@@ -18,6 +17,5 @@ export {
   handleSubmit,
   validateLocation,
   apiGetKeys,
-  Image,
   dayjs,
 }
