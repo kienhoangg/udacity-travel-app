@@ -18,34 +18,35 @@ function handleSubmit(event) {
   let formText = document.getElementById('txtLocation')
   let formDate = document.getElementById('dtpDate')
   console.log(formText, formDate)
-
   if (Client.validateLocation(formText.value) === 1) {
     alert('Input text is required')
     formText.innerHTML = ''
     return
   }
 
-  handleGeonamesApi(formText).then((geonamesData) => {
+  handleGeonamesApi(formText.value).then((geonamesData) => {
     handleForecastWeatherApi(
       geonamesData.geonames[0].lat,
       geonamesData.geonames[0].lng,
       weatherBitApiKey,
     ).then((weatherBitData) => {
       const imgsInfo = []
-      handleSearchImageByLocation(pixaBayApiKey, formText).then((imgData) => {
-        imgData.hits.map((item) => imgsInfo.push(item))
-        const weatherInformation = {
-          cityName: weatherBitData.city_name,
-          images: imgsInfo,
-          data: [...weatherBitData.data],
-        }
-        generateCard(
-          weatherInformation.cityName,
-          weatherInformation.data,
-          weatherInformation.images,
-        )
-        localStorage.setItem('weather', JSON.stringify(weatherInformation))
-      })
+      handleSearchImageByLocation(pixaBayApiKey, formText.value).then(
+        (imgData) => {
+          imgData.hits.map((item) => imgsInfo.push(item))
+          const weatherInformation = {
+            cityName: weatherBitData.city_name,
+            images: imgsInfo,
+            data: [...weatherBitData.data],
+          }
+          generateCard(
+            weatherInformation.cityName,
+            weatherInformation.data,
+            weatherInformation.images,
+          )
+          localStorage.setItem('weather', JSON.stringify(weatherInformation))
+        },
+      )
     })
   })
 
